@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "base.apps.BaseConfig",
     "django_filters",
     "crispy_forms",
-    "ckeditor",
+    "django_ckeditor_5",
 ]
 
 MIDDLEWARE = [
@@ -80,8 +80,12 @@ WSGI_APPLICATION = "socials.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "Truffle",
+        "HOST": os.getenv('DBHOST'),
+        "PORT": os.getenv('DBPORT'),
+        "USER": os.getenv('DBUSERID'),
+        "PASSWORD": os.getenv('DBPASSWORD'),
     }
 }
 

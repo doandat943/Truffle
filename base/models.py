@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 import uuid
 from datetime import datetime
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 from django.urls import reverse
 
 User = get_user_model()
@@ -37,7 +37,7 @@ class Post(models.Model):
     image=models.ImageField(null=True,blank=True,upload_to="images/")
     title_tag=models.CharField(max_length=255,default="")
     author=models.ForeignKey(Profile,on_delete=models.CASCADE)
-    caption=RichTextField(blank=True,null=True)
+    caption=CKEditor5Field(blank=True,null=True)
     post_date=models.DateField(auto_now_add=True)
     location=models.CharField(max_length=255,default="")
     no_of_likes=models.IntegerField(default=0)

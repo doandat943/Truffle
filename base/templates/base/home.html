@@ -81,28 +81,28 @@
   
          {% endif %}
          <!-- sidebar -->
-         <div class="sidebar">
-          <a class="menu-item active" href="{% url 'home' %}" style="text-decoration: none;">
-              <span><i class="uil uil-home"></i></span><h3>Home</h3>
+         <div class="sidebar"style=" align-items: center">
+          <a class="menu-item active" href="{% url 'home' %}" style="text-decoration: none;align-items: center;">
+              <span><i class="uil uil-home"></i></span><h3 style="text-align: center;">Home</h3>
           </a>
-          <a class="menu-item" href="{% url 'add_post' %}" style="text-decoration: none;">
-              <span><i class="uil uil-compass"></i></span><h3>
+          <a class="menu-item" href="{% url 'add_post' %}" style="text-decoration: none;align-items: center;">
+              <span><i class="uil uil-compass"></i></span><h3 style="text-align: center;">
                 Add Post
             </h3>
           </a>
               
-              <a class="menu-item" href="{% url 'edit_profile_page' user.profile.id %}" style="text-decoration: none;">
+              <a class="menu-item" href="{% url 'edit_profile_page' user.profile.id %}" style="text-decoration: none;align-items: center;">
               <span><i class="uil uil-edit"></i></span>
-              <h3>Edit Profile</h3>
+              <h3 style="text-align: center;">Edit Profile</h3>
               </a>
 
               
-              <a class="menu-item" href="{% url 'show_profile_page' user.profile.id %}" style="text-decoration: none;">
-              <span><i class="uil uil-bookmark"></i></span><h3>Profile</h3>
+              <a class="menu-item" href="{% url 'show_profile_page' user.profile.id %}" style="text-decoration: none;align-items: center;">
+              <span><i class="uil uil-bookmark"></i></span><h3 style="text-align: center;">Profile</h3>
               </a>
 
-              <a class="menu-item" href="/password" style="text-decoration: none;">
-                <span><i class="uil uil-lock"></i></span><h3>Change Password</h3>
+              <a class="menu-item" href="/password" style="text-decoration: none;align-items: center;">
+                <span><i class="uil uil-lock"></i></span><h3 style="text-align: center;">Change Password</h3>
                 </a>
          </div>
          <!-- end of sidebar -->

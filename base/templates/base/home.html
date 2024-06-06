@@ -14,6 +14,26 @@
     #heart.red {
       color: red;
     }
+    .rounded-input {
+      border-radius: 15px; 
+      border: 1px solid #ccc; 
+      padding: 5px;
+      width: calc(55ch + 20px);
+      box-sizing: border-box;
+  }
+  .rounded-button {
+    border-radius: 15px; 
+    background-color: #28a745; 
+    color: white;
+    border: none; 
+    padding: 5px 10px;
+    font-size: 16px; 
+    cursor: pointer; 
+}
+
+.rounded-button:hover {
+    background-color: #218838;
+}
   </style>
 {% endblock %}
 
@@ -190,8 +210,8 @@
                 <form method="post" action="{% url 'add_comment' post.pk %}">
                   {% csrf_token %}
                   <input type="hidden" name="name" value="{{ request.user.profile.username }}" />
-                  <input type="text" name="body" size="55" />
-                  <button type="submit">Add Comment</button>
+                  <input type="text" name="body" size="100"  class="rounded-input"/>
+                  <button type="submit" class="rounded-button">Add Comment</button>
                 </form>
 
                 <!-- Modal -->
@@ -218,7 +238,7 @@
                         <form method="post" action="{% url 'add_comment' post.pk %}">
                           {% csrf_token %}
                           <input type="hidden" name="name" value="{{ request.user.profile.username }}" />
-                          <input type="text" name="body" size="55" />
+                          <input type="text" name="body" size="100" />
                           <button type="submit">Add Comment</button>
                         </form>
                       </div>

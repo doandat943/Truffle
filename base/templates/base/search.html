@@ -1,12 +1,9 @@
 
 
 {% extends 'main.html' %} {% load static %} {% block styles %}
-
 <link rel="stylesheet" href="{% static 'styles/search.css' %}" />
 {% endblock %}
-
 {% block content %}
-
 <main>
 {% if username_profile_list %}
 {% for users in username_profile_list %}
@@ -21,7 +18,6 @@
           <p class="stat__number">80K</p>
           <p class="stat__name">Followers</p>
         </div>
-       
       </div>
     </div>
     <div class="profile__img__container">
@@ -44,12 +40,8 @@
         </a>
      </div>
       <br/><br/><br/>
-      
     </div>
   </div>
   {% endif %}
 </main>
-
-
-
 {% endblock %}

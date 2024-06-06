@@ -1,15 +1,12 @@
 {% extends 'main.html' %}
 {% load static %}
-
 <title>
      Delete Post
 </title>
-
 {% block styles %}
 <!-- Replace {name} with the respective css file -->
 <link rel="stylesheet" href="{% static 'styles/deletepost.css' %}" />
 {% endblock %}
-
 {% block content %}
 {% if user.is_authenticated %}
     <br/><br/>

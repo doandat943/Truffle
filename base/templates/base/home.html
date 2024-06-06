@@ -227,11 +227,16 @@
                           No Comments yet.. <a href="{% url 'add_comment' post.pk %}">Add Comment</a>
                         {% else %}
                           {% for comment in post.comments.all %}
-                            <strong>{{ comment.name }}-{{ comment.date_added }}</strong>
-                            <br />
-                            {{ comment.body }}
-                            <br />
-                            <hr />
+                            {% if comment.post_id == post.id %}
+                              <hr />
+                              <strong class="comment-info">
+                                {{ comment.name }}
+                                <span style="font-size: 0.8em;">{{ comment.date_added }}</span>
+                              </strong>
+                              <br />
+                              {{ comment.body }}
+                              <br />
+                            {% endif %}
                           {% endfor %}
                         {% endif %}
 

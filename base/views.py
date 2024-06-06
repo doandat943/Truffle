@@ -179,6 +179,18 @@ class AddCommentView(CreateView):
         form.instance.post_id=self.kwargs['pk']
         return super().form_valid(form)
 
+def add_comment(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('feed')  # Thay 'feed' bằng tên urlpattern của trang feed của bạn
+    else:
+        form = CommentForm()
+    return redirect('/')
 
 @login_required(login_url='signup')
 def like_post(request):
